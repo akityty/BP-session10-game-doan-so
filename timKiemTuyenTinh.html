@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [0, 1, 2, 3, 4];
+    let inputNumber = parseInt(prompt("nhap so can tim"));
+
+    function linearSearch(arr, inputNumber) {
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === inputNumber) {
+                return inputNumber;
+            }
+        }
+        return -1;
+    }
+    let date1 = new Date().getMilliseconds();
+
+    let checkValue = linearSearch(arr, inputNumber);
+    if (checkValue !== -1)
+        alert("da doan dung");
+    else alert("da doan sai");
+    let date2 = new Date().getMilliseconds();
+    alert("thoi gian thu hien la: "+(parseInt(date2)-parseInt(date1)));
+</script>
+</body>
+</html>

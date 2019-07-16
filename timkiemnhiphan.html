@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    let arr = [1,2,4,6,8,10,15,27,33,46,48,58,69,73,85,93,100];
+    let inputNumber  =  parseInt(prompt("nhap  so can tim"));
+    function binarySearch(arr,inputNumber) {
+        let startPoint = 0;
+        let endPoint = arr.length - 1;
+        let midPoint = Math.round((startPoint + endPoint) / 2);
+        let index = -1;
+        while (startPoint <= endPoint) {
+            if (inputNumber === arr[midPoint]) {
+                index = "you win;";
+                return index;
+            } else {
+                if ( inputNumber > arr[midPoint]) {
+                    startPoint = midPoint+1;
+                }
+                else{
+                    endPoint = midPoint -1;
+                }
+            }
+        }
+    }
+     let date1 = new Date().getMilliseconds();
+
+     let index = binarySearch(arr,inputNumber);
+     alert(index);
+     let date2 = new Date().getMilliseconds();
+     alert("thoi gian: "+(parseInt(date2)-parseInt(date1)));
+
+</script>
+</body>
+</html>
